@@ -31,17 +31,20 @@
 
                 <div class="inbox-list-section">
                     <ul class="inbox-list">
-                        <li>
-                            <a href="#">Mail title example</a>
+                        <li class="inbox-list-item active" onclick="DOM.classToggle(event)">
+                            A very long email title to test alignement
                         </li>
-                        <li>
-                            <a href="#">Dog</a>
+                        <li class="inbox-list-item" onclick="DOM.classToggle(event)">
+                            A crazy test
                         </li>
-                        <li>
-                            <a href="#">Test</a>
+                        <li class="inbox-list-item" onclick="DOM.classToggle(event)">
+                            A crazy test
                         </li>
-                        <li class="active">
-                            <a href="#">A very long email title to test alignement</a>
+                        <li class="inbox-list-item" onclick="DOM.classToggle(event)">
+                            A crazy test
+                        </li>
+                        <li class="inbox-list-item" onclick="DOM.classToggle(event)">
+                            A crazy test
                         </li>
                     </ul>
                 </div>
@@ -54,8 +57,10 @@
             <div class="email-header">
                 <h2>A very long email title to test alignement</h2>
                 <div class="sender-info">
-                    <p>spam@spammer.com</p>
-                    <p>02/03/2021 - 8:31</p>
+                    <p id="sender"><span class="fas fa-address-book"></span> spam@spammer.com</p>
+                    <p id="date"><span class="fas fa-calendar-alt"></span> 02/03/2021 - 8:31</p>
+                    <p id="delete"><span class="fas fa-trash"></span> Delete</p>
+                    <p id="reply"><span class="fas fa-reply"></span> Reply</p>
                 </div>
             </div>
     
@@ -69,5 +74,7 @@
         </main>
 
     </div>
+
+    <script src="./assets/js/scripts.js"></script>
 </body>
 </html>
