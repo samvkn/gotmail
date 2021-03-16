@@ -13,6 +13,8 @@
     --dark-gray: #303030;
     --separator: #333333;
     --light-gray: #666666;
+    --input-height: 3rem;
+    --textarea-height: 12rem;
 }
 
 /* * */ 
@@ -49,12 +51,32 @@ body {
     justify-items: stretch;
 }
 
+.flex-container {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+.flex-container.y {
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+}
+
 /* * */ 
-/* * * * * * * * Titles & lists */
+/* * * * * * * * Titles, buttons & lists */
 /* * */
 
-h1, h2 {
+h1, h2, h3 {
     font-weight: normal;
+}
+
+button {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.5rem;
+    border: none;
+    background: none;
+    color: white;
 }
 
 ul {
@@ -79,6 +101,10 @@ a, a:visited, a:target {
     text-align: center;
 }
 
+.greeting {
+    margin-top: 1.5rem;
+}
+
 .logo {
     color: var(--green);
     font-size: 3rem;
@@ -93,8 +119,25 @@ a, a:visited, a:target {
 }
 
 .inbox-header {
+    padding: 0 1.5rem;
     text-align: center;
     cursor: default;
+}
+
+a.new-email-button {
+    padding: .25rem .5rem;
+
+    color: var(--green);
+
+    border: 1px solid var(--green);
+    border-radius: .4rem;
+
+    opacity: .7;
+    transition: opacity .2s;
+}
+
+a.new-email-button:hover {
+    opacity: 1;
 }
 
 .inbox-list-section {
@@ -191,4 +234,136 @@ ul.inbox-list li.active {
     font-size: 1.5rem;
     line-height: 2rem;
     letter-spacing: .1rem;
+}
+
+/* * */ 
+/* * * * * * * * Modal */
+/* * */
+
+.modal-overlay {
+    background: rgba(0, 0, 0, .8);
+
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: opacity .5s;
+}
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 999;
+}
+
+.modal {
+    min-width: 50vw;
+    min-height: 50vh;
+    padding: 2rem;
+    
+    background: #202020;
+    border-radius: .4rem;
+
+    overflow-y: auto;
+}
+.modal h2 {
+    text-align: center;
+}
+
+/* * */ 
+/* * * * * * * * Forms */
+/* * */
+
+form {
+    margin-top: 1rem;
+    width: 100%;
+}
+
+form input, form textarea {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.input-group {
+    margin-top: 1rem;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+}
+.input-group input, .input-group textarea {
+    padding: .5rem;
+    width: 100%;
+    height: var(--input-height);
+    
+    border: none;
+    border-radius: 0 .4rem .4rem 0;
+    background: var(--black);
+}
+.input-group textarea {
+    min-height: var(--input-height);
+    height: var(--textarea-height);
+}
+
+.input-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: .5rem .8rem;
+    height: var(--input-height);
+
+    background: var(--black);
+    color: var(--green);
+    border-radius: .4rem 0 0 .4rem;
+}
+
+.input-icon.textarea-icon {
+    flex-direction: column;
+    justify-content: start;
+    padding-top: .75rem;
+    min-height: var(--input-height);
+    height: var(--textarea-height);
+}
+
+.input-group.actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.form-button, a.form-button {
+    display: flex;
+    align-items: center;
+
+    height: var(--input-height);
+    padding: .4rem 1rem;
+    
+    cursor: pointer;
+    background: var(--green);
+    color: #202020;
+    text-align: center;
+    border-radius: .4rem;
+
+    opacity: .7;
+    transition: opacity .2s;
+}
+
+.form-button:hover, a.form-button:hover {
+    opacity: 1;
+}
+
+a.form-button {
+    background: none;
+    color: var(--red);
+
+    border: solid 1px var(--red);
 }

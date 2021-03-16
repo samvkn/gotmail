@@ -1,7 +1,6 @@
+const Toggle = {
 
-const DOM = {
-
-    classToggle(event){
+    email(event){
 
         const listItems = document.querySelectorAll('.inbox-list-item')
 
@@ -12,4 +11,7 @@ const DOM = {
         event.currentTarget.classList.add('active')
     },
 
+    modal(){
+        document.querySelector('.modal-overlay').classList.toggle('active')
+    },
 }

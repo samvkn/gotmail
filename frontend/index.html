@@ -17,33 +17,38 @@
 
         <aside id="sidebar">
             
-            <header>
+            <header >
                 <a href="#">
                     <h1 class="logo">gotMail <span class="fas fa-envelope"></span></h1>
                 </a>
+                <h3 class="greeting">Bem vindo usuário</h3>
             </header>
     
             <section id="inbox">
 
-                <div class="inbox-header">
+                <div class="inbox-header flex-container">
                     <h2><span class="fas fa-inbox"></span> inbox</h2>
+
+                    <a href="#" class="new-email-button" onclick="Toggle.modal()">
+                        <span class="fas fa-plus-square"></span> Escrever
+                    </a>
                 </div>
 
                 <div class="inbox-list-section">
                     <ul class="inbox-list">
-                        <li class="inbox-list-item active" onclick="DOM.classToggle(event)">
+                        <li class="inbox-list-item active" onclick="Toggle.email(event)">
                             A very long email title to test alignement
                         </li>
-                        <li class="inbox-list-item" onclick="DOM.classToggle(event)">
+                        <li class="inbox-list-item" onclick="Toggle.email(event)">
                             A crazy test
                         </li>
-                        <li class="inbox-list-item" onclick="DOM.classToggle(event)">
+                        <li class="inbox-list-item" onclick="Toggle.email(event)">
                             A crazy test
                         </li>
-                        <li class="inbox-list-item" onclick="DOM.classToggle(event)">
+                        <li class="inbox-list-item" onclick="Toggle.email(event)">
                             A crazy test
                         </li>
-                        <li class="inbox-list-item" onclick="DOM.classToggle(event)">
+                        <li class="inbox-list-item" onclick="Toggle.email(event)">
                             A crazy test
                         </li>
                     </ul>
@@ -73,6 +78,39 @@
             </div>
         </main>
 
+    </div>
+
+    <div class="modal-overlay">
+        <div class="modal flex-container y">
+            <h2><span class="fas fa-paper-plane"></span></h2>
+
+            <form action="">
+                
+                <div class="input-group">
+                    <label for="recipient" class="sr-only">Destinarário</label>
+                    <span class="fas fa-address-book input-icon"></span>
+                    <input type="email" id="recipient" name="recipient" placeholder="Destinatário" required autofocus>
+                </div>
+                
+                <div class="input-group">
+                    <label for="subject" class="sr-only">Assunto</label>
+                    <span class="fas fa-tag input-icon"></span>
+                    <input type="text" id="subject" name="subject" placeholder="Assunto" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="message" class="sr-only">Mensagem</label>
+                    <span class="fas fa-comment-alt input-icon textarea-icon"></span>
+                    <textarea name="message" id="message" placeholder="Mensagem" required></textarea>
+                </div>
+
+                <div class="input-group actions">
+                    <a href="#" class="form-button cancel" onclick="Toggle.modal()">Cancelar</a>
+
+                    <button class="form-button send">Enviar</button>
+                </div>
+            </form>
+        </div>
     </div>
 
     <script src="./assets/js/scripts.js"></script>
