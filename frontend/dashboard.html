@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gotMail</title>
+
+    <link rel="shortcut icon" href="./assets/img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./assets/img/favicon.png" type="image/png">
+
+    <link rel="stylesheet" href="./node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <div class="grid-container">
+
+        <aside id="sidebar">
+            
+            <header >
+                <a href="#">
+                    <h1 class="logo">gotMail <span class="fas fa-envelope"></span></h1>
+                </a>
+                <h3 class="greeting">Bem vindo usuário</h3>
+            </header>
+    
+            <section id="inbox">
+
+                <div class="inbox-header flex-container">
+                    <h2><span class="fas fa-inbox"></span> inbox</h2>
+
+                    <a href="#" class="new-email-button" onclick="Toggle.modal()">
+                        <span class="fas fa-plus-square"></span> Escrever
+                    </a>
+                </div>
+
+                <div class="inbox-list-section">
+                    <ul class="inbox-list">
+                        <li class="inbox-list-item active" onclick="Toggle.email(event)">
+                            A very long email title to test alignement
+                        </li>
+                        <li class="inbox-list-item" onclick="Toggle.email(event)">
+                            A crazy test
+                        </li>
+                        <li class="inbox-list-item" onclick="Toggle.email(event)">
+                            A crazy test
+                        </li>
+                        <li class="inbox-list-item" onclick="Toggle.email(event)">
+                            A crazy test
+                        </li>
+                        <li class="inbox-list-item" onclick="Toggle.email(event)">
+                            A crazy test
+                        </li>
+                    </ul>
+                </div>
+
+            </section>
+
+        </aside>
+    
+        <main id="email">
+            <div class="email-header">
+                <h2>A very long email title to test alignement</h2>
+                <div class="sender-info">
+                    <p id="sender"><span class="fas fa-address-book"></span> spam@spammer.com</p>
+                    <p id="date"><span class="fas fa-calendar-alt"></span> 02/03/2021 - 8:31</p>
+                    <p id="delete"><span class="fas fa-trash"></span> Delete</p>
+                    <p id="reply"><span class="fas fa-reply"></span> Reply</p>
+                </div>
+            </div>
+    
+            <div class="separator"></div>
+    
+            <div class="email-body">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse fugiat debitis, nobis, vitae qui sequi ut reprehenderit harum deserunt commodi consequuntur repellat impedit odio quod cumque dolorum facere voluptatem accusantium!
+                </p>
+            </div>
+        </main>
+
+    </div>
+
+    <div class="modal-overlay">
+        <div class="modal flex-container y">
+            <h2><span class="fas fa-paper-plane"></span></h2>
+
+            <form action="">
+                
+                <div class="input-group">
+                    <label for="recipient" class="sr-only">Destinarário</label>
+                    <span class="fas fa-address-book input-icon"></span>
+                    <input type="email" id="recipient" name="recipient" placeholder="Destinatário" required autofocus>
+                </div>
+                
+                <div class="input-group">
+                    <label for="subject" class="sr-only">Assunto</label>
+                    <span class="fas fa-tag input-icon"></span>
+                    <input type="text" id="subject" name="subject" placeholder="Assunto" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="message" class="sr-only">Mensagem</label>
+                    <span class="fas fa-comment-alt input-icon textarea-icon"></span>
+                    <textarea name="message" id="message" placeholder="Mensagem" required></textarea>
+                </div>
+
+                <div class="input-group actions">
+                    <a href="#" class="form-button cancel" onclick="Toggle.modal()">Cancelar</a>
+
+                    <button class="form-button send">Enviar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="./assets/js/scripts.js"></script>
+</body>
+</html>
