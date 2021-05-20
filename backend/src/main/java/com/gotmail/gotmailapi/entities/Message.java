@@ -39,7 +39,7 @@ public class Message {
 	private User user;
 
 	public Message() {
-		
+
 	}
 
 	public Message(Long id, String subject, String message, String receiver, LocalDateTime date, Boolean read,
