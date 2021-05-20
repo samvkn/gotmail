@@ -11,6 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.gotmail.gotmailapi.dto.UserDTO;
+
 @Entity
 @Table(name = "users")
 public class User {
@@ -19,10 +21,10 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(nullable = false, length = 15)
+	@Column(nullable = false, length = 20)
 	private String username;
 	
-	@Column(nullable = false, length = 50, unique = true)
+	@Column(nullable = false, length = 64, unique = true)
 	private String email;
 	
 	@Column(nullable = false, length = 64)
@@ -32,7 +34,18 @@ public class User {
 	private List<Message> messages = new ArrayList<>();
 	
 	public User() {
-		
+	}
+	
+	public User(UserDTO entity) {
+		username = entity.getUsername();
+		email = entity.getEmail();
+		password = entity.getPassword();
+	}
+	
+	public User(String username, String email, String password) {
+		this.username = username;
+		this.email = email;
+		this.password = password;
 	}
 
 	public User(Long id, String username, String email, String password) {
